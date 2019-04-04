@@ -1,0 +1,6 @@
+.DS_Store
+*.pyc
+fintech_startup/media/*
+fintech_startup/static/*
+*swp
+data

@@ -1,0 +1,36 @@
+version: "3"
+services:
+  nginx:
+    image: nginx:latest
+    container_name: ng01
+    ports:
+      - "80:80"
+    volumes:
+      - ./fintech_startup/static:/static
+      - ./fintech_startup/media:/media
+      - ./config/nginx:/etc/nginx/conf.d
+    depends_on:
+      - web
+
+  postgres:
+    image: postgres:10
+    container_name: ps01
+    volumes:
+        - /var/lib/postgresql/data
+    environment:
+      POSTGRES_DB: transfers
+      POSTGRES_USER: steve
+    ports:
+      - "5432:5432"
+
+  web:
+    build: .
+    container_name: dg01
+    depends_on:
+      - postgres
+    volumes:
+      - "./fintech_startup:/opt/fintech_startup"
+      - "./config:/opt/config"
+    ports:
+      - "9000:9000"
+
