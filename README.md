@@ -20,12 +20,14 @@ docker-compose up --build
 ```
 go to default IP http://192.168.99.100 in your browser
 
-**Run tests**
+**Run linter and tests**
 ----
 ```
-docker exec -it <container_hash> /bin/bash
-python mange.py test
+docker exec -it <container_hash> /bin/bash (to test in container)
+python manage.py test
+pylint **/*.py --load-plugins pylint_django --max-parents=15
 ```
+--max-parents=15 is for standard DRF modules
 
 **Get available accounts**
 ----
