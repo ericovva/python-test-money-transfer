@@ -1,3 +1,12 @@
+**Project description**
+----
+Django/Python service for making payments beetwin accounts.
+Use this service, if you want:
+
+* Be able to send a payment from one account to another (same currency)
+* Be able to see all payments
+* Be able to see available accounts
+
 **Setup**
 ----
 clone this repository
