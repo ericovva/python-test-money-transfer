@@ -113,6 +113,10 @@ python mange.py test
    }`
    * **Code:** 400 <br />
   `{
+    "detail": "Account currencies don't match."
+   }`
+   * **Code:** 400 <br />
+  `{
     "non_field_errors": [
         "Amount less than zero"
     ]
